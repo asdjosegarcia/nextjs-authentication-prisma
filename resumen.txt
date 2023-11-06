@@ -1,0 +1,19 @@
+
+//////archivos:
+prisma.ts/db.ts   // .src/libs/ 
+
+//////comandos
+npm i prisma -D   //instal prisma como dependencia de desarrollo
+npm prisma init   //iniccializa prisma por defecto con una DB postgressSQL
+npx prisma migrate dev --name init //inicia una base de datos nueva segun tengamos schema.prisma
+
+
+
+
+//////postgresSQL 
+sudo -u postgres psql   //iniciamos como el usuario "postgress"(usuario por defecto),psql permite interactuar con la BD
+\l                      //listar basde de datos
+q                       //salir
+\q                      //salir de postgress
+alter user postgres with password 'password'; //cambio de contraseña a el el suaruio postgres a 'password', no olvidar el ;
+
