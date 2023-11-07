@@ -1,6 +1,7 @@
 // import React from 'react'
 "use client" //para que funcione de lado cliente
 import { useForm } from "react-hook-form";//hook que instalamos por aparte para que getione las consulltas de formularios
+import { useRouter } from "next/navigation";
 
 
 const RegisterPage = () => {
@@ -9,6 +10,7 @@ const RegisterPage = () => {
     //handlesubmit que cancela el comportamiento por defecto
     //formState objeto que tiene informacion del formulario, si se envio, si tiene algun error,
     //objeto que alamcena los datos que extrae formState
+    const router=useRouter()
 
     const onSubmit = handleSubmit(async(data) => {//esta funcion ccancela el comportamiento por defecto del formulario(recarga de la pag), y entrega los datos del formulario
         // console.log(data)//datos del formulario
@@ -27,10 +29,13 @@ const RegisterPage = () => {
                 'Content-Type':'application/json'
             }
         })
-        const resJSON=await res.json()//recivimos la respuesta de la consulta
-        console.log(resJSON)//mostramos la respuesta por consola
+        // const resJSON=await res.json()//recivimos la respuesta de la consulta
+        // console.log(res)//mostramos la respuesta por consola
+        if(res.ok){//res.ok nos da un true si la consulta fue bien, esto se genera por defecto
+            router.push('/auth/login')//si el registro fue ok, lo redirigimos a la pagina de login
+        }
     })
-
+    
     return (
         <div className="h-[calc(100vh-7rem)] flex justify-center items-center">
             <form onSubmit={onSubmit} className="w-1/4">
