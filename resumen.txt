@@ -1,9 +1,11 @@
 //terminos:
 NextAuth--> bilioteca de autenticacion de codigo abierto que se utiliza comunmente con aplicaciones basadas en nextjs permitiendo autenticaciones felxibles como nomal, con google,facebook,twiter,etc entre otras cosas
 react-hook-form--> biblioteca de react para crear formularios
+signin--> iniciar seccion, similar a loggin
 
 //////archivos:
 prisma.ts/db.ts   // .src/libs/ 
+[...nextAuth]     //cualquier petcion que hagamos pasara por el router de esa carpeta, ya sea get,post,put etc. par validar el usuario
 
 //////comandos
 npm i prisma -D   //instal prisma como dependencia de desarrollo
