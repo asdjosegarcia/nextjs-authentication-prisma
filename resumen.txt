@@ -2,6 +2,7 @@
 NextAuth--> bilioteca de autenticacion de codigo abierto que se utiliza comunmente con aplicaciones basadas en nextjs permitiendo autenticaciones felxibles como nomal, con google,facebook,twiter,etc entre otras cosas
 react-hook-form--> biblioteca de react para crear formularios
 signin--> iniciar seccion, similar a loggin
+middleware--> funcion intermediaria que se ejecuta durante el procesamiento de una solicitud, ej entrar a un area de una web, en este caso se usar para proteger nuestras rutas
 
 //////archivos:
 prisma.ts/db.ts   // .src/libs/ 

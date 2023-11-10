@@ -2,7 +2,7 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from 'next-auth/providers/credentials'; //proveedor de autenticación de credenciales, nos permite autenticar las credenciales 
 import db from "@/libs/db";//importamos la base de datos    
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt'//encriptador y desencriptador   
 
 
 const authOptions = {//objeto donde almacenamos la configuracion para enviarsela a la funcion NextAuth
@@ -34,7 +34,10 @@ const authOptions = {//objeto donde almacenamos la configuracion para enviarsela
                 };
             }
         })
-    ]
+    ],
+    pages: {
+        signIn: "/auth/login", //el midlleware nos mandaria aqui cuando no estemos logueados
+      }
 }
 
 
