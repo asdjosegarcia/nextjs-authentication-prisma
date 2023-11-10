@@ -14,7 +14,7 @@ const authOptions = {//objeto donde almacenamos la configuracion para enviarsela
                 password: { label: "Password", type: "password", placeholder: "*****" }
             },
             async authorize(credentials, req) {//funcion que que autoriza/verifica a el usuario, recive el contenido de lo que escribamos en el input, y la informacionde la peticion
-                console.log(credentials)
+                // console.log(credentials)
                 const userFound =await db.user.findUnique({//almacena el usuario,await por por que sino nos manda cualquier cosa
                     where: {
                         email: credentials.email
@@ -22,7 +22,7 @@ const authOptions = {//objeto donde almacenamos la configuracion para enviarsela
                 })
                 if(!userFound) throw new Error('No user found') //si no se encuentra un usario como en ingresado en la db retorna null    
 
-                console.log('userFound',userFound)//mostramos el usuario que se encontro con el email
+                // console.log('userFound',userFound)//mostramos el usuario que se encontro con el email
                 const matchPassword= await bcrypt.compare(credentials.password,userFound.password) //esto nos da un true o false,true si coinciden las contraseñas encriptadas
                 if(!matchPassword) throw new Error('Password wrong') //si no coincide retorna null(no hay usuario)
 

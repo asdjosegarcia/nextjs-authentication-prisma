@@ -22,7 +22,7 @@ const LoginPage = () => {
     } else {
       // console.log('enviando a /dashboard')
       router.push('/dashboard') //si la autenticacion sale bien redireccionamos a el usuario a dashboard
-
+      router.refresh() //y refresca, aqui se refrescaria el dashboard
     }
     console.log('res', res)
   })

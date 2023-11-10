@@ -10,4 +10,4 @@ export const config = {
 export { default } from "next-auth/middleware";
 
 export const config = { matcher: ["/dashboard/:path*", "/cursos/:path*"] } //protege dashboard, y cursos(auqnue cursos no exista)
-//:path*  me resolvio el bug, su funcion es permitir que se le agregue cualquier cosa adelante ya sea un "" o un "gato/pato"
+//:path*  permite que se agregue cualquier cosa adelante ya sea un "" o un "gato/pato",(bloquea las rutas dentro de dashboard para cualquiera que no este autorizado)
